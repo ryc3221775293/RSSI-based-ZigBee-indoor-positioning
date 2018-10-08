@@ -1,0 +1,90 @@
+﻿生成启动时间为 2018-10-08 21:46:55。
+     1>项目“E:\SPB_Data\Zigbee\RSSI-based-ZigBee-indoor-positioning\Positioning\Positioning\Positioning.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“x64\Debug\Positioning.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       Midl:
+         c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\midl.exe /D _DEBUG /W1 /nologo /char signed /env win32 /h "Positioning_h.h" /tlb "x64\Debug\Positioning.tlb" Positioning.idl 
+         Processing .\Positioning.idl
+         Positioning.idl
+         Processing c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\oaidl.idl
+         oaidl.idl
+         Processing c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\objidl.idl
+         objidl.idl
+         Processing c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\unknwn.idl
+         unknwn.idl
+         Processing c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\wtypes.idl
+         wtypes.idl
+         Processing c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\basetsd.h
+         basetsd.h
+         Processing c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\guiddef.h
+         guiddef.h
+         Processing c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\oaidl.acf
+         oaidl.acf
+       ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /Od /D WIN32 /D _WINDOWS /D _DEBUG /D _MBCS /D _AFXDLL /Gm /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"x64\Debug\Positioning.pch" /Fo"x64\Debug\\" /Fd"x64\Debug\vc100.pdb" /Gd /TP /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /Od /D WIN32 /D _WINDOWS /D _DEBUG /D _MBCS /D _AFXDLL /Gm /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"x64\Debug\Positioning.pch" /Fo"x64\Debug\\" /Fd"x64\Debug\vc100.pdb" /Gd /TP /errorReport:prompt DlgProxy.cpp Positioning.cpp PositioningDlg.cpp SerialPort.cpp
+         SerialPort.cpp
+     1>SerialPort.cpp(131): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
+     1>SerialPort.cpp(132): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
+     1>SerialPort.cpp(412): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : 参见“sprintf”的声明
+     1>SerialPort.cpp(447): warning C4267: “参数”: 从“size_t”转换到“DWORD”，可能丢失数据
+     1>SerialPort.cpp(609): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : 参见“strcpy”的声明
+         PositioningDlg.cpp
+     1>PositioningDlg.cpp(449): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>PositioningDlg.cpp(478): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>PositioningDlg.cpp(482): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>PositioningDlg.cpp(505): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>PositioningDlg.cpp(509): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>PositioningDlg.cpp(531): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>PositioningDlg.cpp(535): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>PositioningDlg.cpp(611): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>PositioningDlg.cpp(612): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+     1>PositioningDlg.cpp(473): warning C4101: “cacy_abeyance2”: 未引用的局部变量
+     1>PositioningDlg.cpp(461): warning C4101: “len”: 未引用的局部变量
+     1>PositioningDlg.cpp(473): warning C4101: “cacx_abeyance2”: 未引用的局部变量
+     1>PositioningDlg.cpp(472): warning C4101: “caby_abeyance2”: 未引用的局部变量
+     1>PositioningDlg.cpp(472): warning C4101: “cabx_abeyance2”: 未引用的局部变量
+         Positioning.cpp
+         DlgProxy.cpp
+         Generating Code...
+     1>e:\spb_data\zigbee\rssi-based-zigbee-indoor-positioning\positioning\positioning\positioningdlg.cpp(439): warning C4715: “CPositioningDlg::OnCommunication”: 不是所有的控件路径都返回值
+       ResourceCompile:
+         c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D _DEBUG /D _AFXDLL /l"0x0804" /Ix64\Debug\ /nologo /fo"x64\Debug\Positioning.res" Positioning.rc 
+       ManifestResourceCompile:
+         c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"x64\Debug\Positioning.exe.embed.manifest.res" x64\Debug\Positioning_manifest.rc 
+       Link:
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"E:\SPB_Data\Zigbee\RSSI-based-ZigBee-indoor-positioning\Positioning\x64\Debug\Positioning.exe" /INCREMENTAL /NOLOGO computer.lib /MANIFEST /ManifestFile:"x64\Debug\Positioning.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"E:\SPB_Data\Zigbee\RSSI-based-ZigBee-indoor-positioning\Positioning\x64\Debug\Positioning.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\SPB_Data\Zigbee\RSSI-based-ZigBee-indoor-positioning\Positioning\x64\Debug\Positioning.lib" /MACHINE:X64 x64\Debug\Positioning.res
+         x64\Debug\Positioning.exe.embed.manifest.res
+         x64\Debug\DlgProxy.obj
+         x64\Debug\Positioning.obj
+         x64\Debug\PositioningDlg.obj
+         x64\Debug\SerialPort.obj
+         x64\Debug\stdafx.obj
+         Positioning.vcxproj -> E:\SPB_Data\Zigbee\RSSI-based-ZigBee-indoor-positioning\Positioning\x64\Debug\Positioning.exe
+       Manifest:
+         c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"x64\Debug\Positioning.exe.embed.manifest" /manifest x64\Debug\Positioning.exe.intermediate.manifest "D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\Include\Manifest\dpiaware.manifest"
+         c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"x64\Debug\Positioning.exe.embed.manifest.res" x64\Debug\Positioning_manifest.rc 
+       LinkEmbedManifest:
+         D:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"E:\SPB_Data\Zigbee\RSSI-based-ZigBee-indoor-positioning\Positioning\x64\Debug\Positioning.exe" /INCREMENTAL /NOLOGO computer.lib /MANIFEST /ManifestFile:"x64\Debug\Positioning.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"E:\SPB_Data\Zigbee\RSSI-based-ZigBee-indoor-positioning\Positioning\x64\Debug\Positioning.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\SPB_Data\Zigbee\RSSI-based-ZigBee-indoor-positioning\Positioning\x64\Debug\Positioning.lib" /MACHINE:X64 x64\Debug\Positioning.res
+         x64\Debug\Positioning.exe.embed.manifest.res
+         x64\Debug\DlgProxy.obj
+         x64\Debug\Positioning.obj
+         x64\Debug\PositioningDlg.obj
+         x64\Debug\SerialPort.obj
+         x64\Debug\stdafx.obj
+         Positioning.vcxproj -> E:\SPB_Data\Zigbee\RSSI-based-ZigBee-indoor-positioning\Positioning\x64\Debug\Positioning.exe
+       RegisterOutput:
+         "E:\SPB_Data\Zigbee\RSSI-based-ZigBee-indoor-positioning\Positioning\x64\Debug\Positioning.exe" /RegServer
+       FinalizeBuildStatus:
+         正在删除文件“x64\Debug\Positioning.unsuccessfulbuild”。
+         正在对“x64\Debug\Positioning.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“E:\SPB_Data\Zigbee\RSSI-based-ZigBee-indoor-positioning\Positioning\Positioning\Positioning.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:08.80

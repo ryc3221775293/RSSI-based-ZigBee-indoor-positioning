@@ -1,0 +1,29 @@
+// Positioning.idl : Positioning.exe 的类型库源
+
+// 此文件将由 MIDL 编译器处理以产生
+// 类型库(Positioning.tlb)。
+
+[ uuid(2CB951B1-D779-49D6-96BD-266A31C8CB0F), version(1.0) ]
+library Positioning
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	//  CPositioningDoc 的主调度接口
+	
+	[ uuid(4E815C12-68E2-4CAD-87AC-E323D6996D59) ]
+	dispinterface IPositioning
+	{
+		properties:
+			
+		methods:
+	};
+
+	//  CPositioningDoc 的类信息
+	
+	[ uuid(C367FA16-669C-4D4C-BA6B-44157B76C329) ]
+	coclass Positioning
+	{
+		[default] dispinterface IPositioning;
+	};
+};

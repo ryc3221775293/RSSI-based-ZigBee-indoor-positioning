@@ -1,0 +1,17 @@
+REGEDIT
+; 此 .REG 文件可能由 SETUP 程序使用。
+;   如果 SETUP 程序不可用，则调用
+;   CWinApp::RegisterShellFileTypes 和 COleObjectFactory::UpdateRegistryAll
+;   在 InitInstance 中对下列项自动进行注册。
+
+
+HKEY_CLASSES_ROOT\Positioning.Application = Positioning Application
+
+
+HKEY_CLASSES_ROOT\Positioning.Application\CLSID = {C367FA16-669C-4D4C-BA6B-44157B76C329}
+
+HKEY_CLASSES_ROOT\CLSID\{C367FA16-669C-4D4C-BA6B-44157B76C329} = Positioning Application
+HKEY_CLASSES_ROOT\CLSID\{C367FA16-669C-4D4C-BA6B-44157B76C329}\ProgId = Positioning.Application
+
+
+HKEY_CLASSES_ROOT\CLSID\{C367FA16-669C-4D4C-BA6B-44157B76C329}\LocalServer32 = Positioning.EXE

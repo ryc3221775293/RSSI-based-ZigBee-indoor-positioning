@@ -1,0 +1,44 @@
+﻿生成启动时间为 2017/6/4 10:28:53。
+     1>项目“G:\Positioning\Positioning\Positioning.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在对“x64\Debug\Positioning.unsuccessfulbuild”执行 Touch 任务。
+       Midl:
+         所有输出均为最新。
+       ClCompile:
+         所有输出均为最新。
+         所有输出均为最新。
+       ResourceCompile:
+         所有输出均为最新。
+       ManifestResourceCompile:
+         所有输出均为最新。
+       Link:
+         F:\VS\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"G:\Positioning\x64\Debug\Positioning.exe" /INCREMENTAL /NOLOGO computer.lib /MANIFEST /ManifestFile:"x64\Debug\Positioning.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"G:\Positioning\x64\Debug\Positioning.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"G:\Positioning\x64\Debug\Positioning.lib" /MACHINE:X64 x64\Debug\Positioning.res
+         x64\Debug\Positioning.exe.embed.manifest.res
+         x64\Debug\DlgProxy.obj
+         x64\Debug\Positioning.obj
+         x64\Debug\PositioningDlg.obj
+         x64\Debug\SerialPort.obj
+         x64\Debug\stdafx.obj
+         Positioning.vcxproj -> G:\Positioning\x64\Debug\Positioning.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"x64\Debug\Positioning.exe.embed.manifest" /manifest x64\Debug\Positioning.exe.intermediate.manifest F:\VS\VC\Include\Manifest\dpiaware.manifest
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"x64\Debug\Positioning.exe.embed.manifest.res" x64\Debug\Positioning_manifest.rc 
+       LinkEmbedManifest:
+         F:\VS\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"G:\Positioning\x64\Debug\Positioning.exe" /INCREMENTAL /NOLOGO computer.lib /MANIFEST /ManifestFile:"x64\Debug\Positioning.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"G:\Positioning\x64\Debug\Positioning.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"G:\Positioning\x64\Debug\Positioning.lib" /MACHINE:X64 x64\Debug\Positioning.res
+         x64\Debug\Positioning.exe.embed.manifest.res
+         x64\Debug\DlgProxy.obj
+         x64\Debug\Positioning.obj
+         x64\Debug\PositioningDlg.obj
+         x64\Debug\SerialPort.obj
+         x64\Debug\stdafx.obj
+         Positioning.vcxproj -> G:\Positioning\x64\Debug\Positioning.exe
+       RegisterOutput:
+         "G:\Positioning\x64\Debug\Positioning.exe" /RegServer
+       FinalizeBuildStatus:
+         正在删除文件“x64\Debug\Positioning.unsuccessfulbuild”。
+         正在对“x64\Debug\Positioning.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“G:\Positioning\Positioning\Positioning.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:42.91

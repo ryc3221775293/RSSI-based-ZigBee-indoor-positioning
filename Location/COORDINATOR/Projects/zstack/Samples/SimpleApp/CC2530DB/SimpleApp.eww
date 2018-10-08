@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\SimpleApp.ewp</path>
+  </project>
+  <batchBuild>
+    <batchDefinition>
+      <name>Build All</name>
+      <member>
+        <project>SimpleApp</project>
+        <configuration>SimpleCollectorEB</configuration>
+      </member>
+      <member>
+        <project>SimpleApp</project>
+        <configuration>SimpleControllerEB</configuration>
+      </member>
+      <member>
+        <project>SimpleApp</project>
+        <configuration>SimpleSensorEB</configuration>
+      </member>
+      <member>
+        <project>SimpleApp</project>
+        <configuration>SimpleSwitchEB</configuration>
+      </member>
+      <member>
+        <project>SimpleApp</project>
+        <configuration>SimpleCollectorEB-Pro</configuration>
+      </member>
+      <member>
+        <project>SimpleApp</project>
+        <configuration>SimpleControllerEB-Pro</configuration>
+      </member>
+      <member>
+        <project>SimpleApp</project>
+        <configuration>SimpleSensorEB-Pro</configuration>
+      </member>
+      <member>
+        <project>SimpleApp</project>
+        <configuration>SimpleSwitchEB-Pro</configuration>
+      </member>
+    </batchDefinition>
+  </batchBuild>
+</workspace>
+
+

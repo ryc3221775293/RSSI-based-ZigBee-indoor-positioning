@@ -1,0 +1,1315 @@
+///////////////////////////////////////////////////////////////////////////////
+//                                                                            /
+// IAR C/C++ Compiler V8.10.3.10338/W32 for 8051        29/Mar/2016  21:15:05 /
+// Copyright 2004-2011 IAR Systems AB.                                        /
+//                                                                            /
+//    Core               =  plain                                             /
+//    Code model         =  banked                                            /
+//    Data model         =  large                                             /
+//    Calling convention =  xdata reentrant                                   /
+//    Constant location  =  data_rom                                          /
+//    Dptr setup         =  1,16                                              /
+//    Source file        =  E:\学习\Zigbee\Location\ZStack-CC2530-2.3.0-1.4.0 /
+//                          \Projects\zstack\Samples\SampleApp\Source\ds18b20 /
+//                          .c                                                /
+//    Command line       =  -f E:\学习\Zigbee\Location\ZStack-CC2530-2.3.0-1. /
+//                          4.0\Projects\zstack\Samples\SampleApp\CC2530DB\.. /
+//                          \..\..\Tools\CC2530DB\f8wRouter.cfg (-DCPU32MHZ   /
+//                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TR /
+//                          UE -DRTR_NWK -DBLINK_LEDS) -f                     /
+//                          E:\学习\Zigbee\Location\ZStack-CC2530-2.3.0-1.4.0 /
+//                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\.. /
+//                          \..\Tools\CC2530DB\f8wConfig.cfg (-DSECURE=0      /
+//                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                 /
+//                          -DDEFAULT_CHANLIST=0x00000800                     /
+//                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                      /
+//                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_M /
+//                          ASK=0x007F -DBEACON_REQUEST_DELAY=100             /
+//                          -DBEACON_REQ_DELAY_MASK=0x00FF                    /
+//                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_P /
+//                          OLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7           /
+//                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3   /
+//                          -DNWK_MAX_DATA_RETRIES=2                          /
+//                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9        /
+//                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40          /
+//                          -DNWK_MAX_BINDING_ENTRIES=4                       /
+//                          -DMAX_BINDING_CLUSTER_IDS=4                       /
+//                          "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07, 0x09,     /
+//                          0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08,   /
+//                          0x0A, 0x0C, 0x0D}" -DMAC_MAX_FRAME_SIZE=116       /
+//                          "-DCONST=const __code" -DGENERIC=__generic        /
+//                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000       /
+//                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)  /
+//                          -DREJOIN_POLL_RATE=440 E:\学习\Zigbee\Location\ZS /
+//                          tack-CC2530-2.3.0-1.4.0\Projects\zstack\Samples\S /
+//                          ampleApp\Source\ds18b20.c -D ZTOOL_P1 -D MT_TASK  /
+//                          -D MT_SYS_FUNC -D MT_ZDO_FUNC -D                  /
+//                          LCD_SUPPORTED=DEBUG -lC                           /
+//                          E:\学习\Zigbee\Location\ZStack-CC2530-2.3.0-1.4.0 /
+//                          \Projects\zstack\Samples\SampleApp\CC2530DB\Route /
+//                          rEB\List\ -lA E:\学习\Zigbee\Location\ZStack-CC25 /
+//                          30-2.3.0-1.4.0\Projects\zstack\Samples\SampleApp\ /
+//                          CC2530DB\RouterEB\List\ --diag_suppress           /
+//                          Pe001,Pa010 -o E:\学习\Zigbee\Location\ZStack-CC2 /
+//                          530-2.3.0-1.4.0\Projects\zstack\Samples\SampleApp /
+//                          \CC2530DB\RouterEB\Obj\ -e --debug --core=plain   /
+//                          --dptr=16,1 --data_model=large                    /
+//                          --code_model=banked --calling_convention=xdata_re /
+//                          entrant --place_constants=data_rom                /
+//                          --nr_virtual_regs 16 -I                           /
+//                          E:\学习\Zigbee\Location\ZStack-CC2530-2.3.0-1.4.0 /
+//                          \Projects\zstack\Samples\SampleApp\CC2530DB\ -I   /
+//                          E:\学习\Zigbee\Location\ZStack-CC2530-2.3.0-1.4.0 /
+//                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\SO /
+//                          URCE\ -I E:\学习\Zigbee\Location\ZStack-CC2530-2. /
+//                          3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC253 /
+//                          0DB\..\..\..\ZMAIN\TI2530DB\ -I                   /
+//                          E:\学习\Zigbee\Location\ZStack-CC2530-2.3.0-1.4.0 /
+//                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\.. /
+//                          \..\..\..\COMPONENTS\MT\ -I                       /
+//                          E:\学习\Zigbee\Location\ZStack-CC2530-2.3.0-1.4.0 /
+//                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\.. /
+//                          \..\..\..\COMPONENTS\HAL\INCLUDE\ -I              /
+//                          E:\学习\Zigbee\Location\ZStack-CC2530-2.3.0-1.4.0 /
+//                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\.. /
+//                          \..\..\..\COMPONENTS\HAL\TARGET\CC2530EB\ -I      /
+//                          E:\学习\Zigbee\Location\ZStack-CC2530-2.3.0-1.4.0 /
+//                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\.. /
+//                          \..\..\..\COMPONENTS\OSAL\MCU\CCSOC\ -I           /
+//                          E:\学习\Zigbee\Location\ZStack-CC2530-2.3.0-1.4.0 /
+//                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\.. /
+//                          \..\..\..\COMPONENTS\OSAL\INCLUDE\ -I             /
+//                          E:\学习\Zigbee\Location\ZStack-CC2530-2.3.0-1.4.0 /
+//                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\.. /
+//                          \..\..\..\COMPONENTS\STACK\AF\ -I                 /
+//                          E:\学习\Zigbee\Location\ZStack-CC2530-2.3.0-1.4.0 /
+//                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\.. /
+//                          \..\..\..\COMPONENTS\STACK\NWK\ -I                /
+//                          E:\学习\Zigbee\Location\ZStack-CC2530-2.3.0-1.4.0 /
+//                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\.. /
+//                          \..\..\..\COMPONENTS\STACK\SEC\ -I                /
+//                          E:\学习\Zigbee\Location\ZStack-CC2530-2.3.0-1.4.0 /
+//                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\.. /
+//                          \..\..\..\COMPONENTS\STACK\SAPI\ -I               /
+//                          E:\学习\Zigbee\Location\ZStack-CC2530-2.3.0-1.4.0 /
+//                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\.. /
+//                          \..\..\..\COMPONENTS\STACK\SYS\ -I                /
+//                          E:\学习\Zigbee\Location\ZStack-CC2530-2.3.0-1.4.0 /
+//                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\.. /
+//                          \..\..\..\COMPONENTS\STACK\ZDO\ -I                /
+//                          E:\学习\Zigbee\Location\ZStack-CC2530-2.3.0-1.4.0 /
+//                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\.. /
+//                          \..\..\..\COMPONENTS\ZMAC\F8W\ -I                 /
+//                          E:\学习\Zigbee\Location\ZStack-CC2530-2.3.0-1.4.0 /
+//                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\.. /
+//                          \..\..\..\COMPONENTS\ZMAC\ -I                     /
+//                          E:\学习\Zigbee\Location\ZStack-CC2530-2.3.0-1.4.0 /
+//                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\.. /
+//                          \..\..\..\COMPONENTS\SERVICES\SADDR\ -I           /
+//                          E:\学习\Zigbee\Location\ZStack-CC2530-2.3.0-1.4.0 /
+//                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\.. /
+//                          \..\..\..\COMPONENTS\SERVICES\SDATA\ -I           /
+//                          E:\学习\Zigbee\Location\ZStack-CC2530-2.3.0-1.4.0 /
+//                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\.. /
+//                          \..\..\..\COMPONENTS\MAC\INCLUDE\ -I              /
+//                          E:\学习\Zigbee\Location\ZStack-CC2530-2.3.0-1.4.0 /
+//                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\.. /
+//                          \..\..\..\COMPONENTS\MAC\HIGH_LEVEL\ -I           /
+//                          E:\学习\Zigbee\Location\ZStack-CC2530-2.3.0-1.4.0 /
+//                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\.. /
+//                          \..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\ -I      /
+//                          E:\学习\Zigbee\Location\ZStack-CC2530-2.3.0-1.4.0 /
+//                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\.. /
+//                          \..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\SINGLE_C /
+//                          HIP\ -Ohz --require_prototypes                    /
+//    List file          =  E:\学习\Zigbee\Location\ZStack-CC2530-2.3.0-1.4.0 /
+//                          \Projects\zstack\Samples\SampleApp\CC2530DB\Route /
+//                          rEB\List\ds18b20.s51                              /
+//                                                                            /
+//                                                                            /
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME ds18b20
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN ?V0
+
+        PUBLIC ??Ds18b20Delay?relay
+        FUNCTION ??Ds18b20Delay?relay,0203H
+        PUBLIC ??Ds18b20Initial?relay
+        FUNCTION ??Ds18b20Initial?relay,0203H
+        PUBLIC ??Ds18b20InputInitial?relay
+        FUNCTION ??Ds18b20InputInitial?relay,0203H
+        PUBLIC ??Ds18b20OutputInitial?relay
+        FUNCTION ??Ds18b20OutputInitial?relay,0203H
+        PUBLIC ??Ds18b20Read?relay
+        FUNCTION ??Ds18b20Read?relay,0203H
+        PUBLIC ??Ds18b20Write?relay
+        FUNCTION ??Ds18b20Write?relay,0203H
+        PUBLIC ??ReadDs18B20?relay
+        FUNCTION ??ReadDs18B20?relay,0203H
+        PUBLIC Ds18b20Delay
+        FUNCTION Ds18b20Delay,080203H
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUBLIC Ds18b20Initial
+        FUNCTION Ds18b20Initial,021203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 10, STACK
+        PUBLIC Ds18b20InputInitial
+        FUNCTION Ds18b20InputInitial,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC Ds18b20OutputInitial
+        FUNCTION Ds18b20OutputInitial,0203H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC Ds18b20Read
+        FUNCTION Ds18b20Read,021203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC Ds18b20Write
+        FUNCTION Ds18b20Write,021203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 9, STACK
+        PUBWEAK P0DIR
+        PUBLIC ReadDs18B20
+        FUNCTION ReadDs18B20,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBWEAK _A_P0
+        
+        CFI Names cfiNames0
+        CFI StackFrame CFA_SP SP IDATA
+        CFI StackFrame CFA_PSP16 PSP16 XDATA
+        CFI StackFrame CFA_XSP16 XSP16 XDATA
+        CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+        CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+        CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+        CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+        CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+        CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+        CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+        CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+        CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+        CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+        CFI VirtualResource ?RET:24
+        CFI Resource ?BRET_EXT:8
+        CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+        CFI ResourceParts PSP16 PSPH, PSPL
+        CFI ResourceParts XSP16 XSPH, XSPL
+        CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+        CFI EndNames cfiNames0
+        
+        CFI Common cfiCommon0 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-3
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B Undefined
+        CFI A Undefined
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 Undefined
+        CFI R1 Undefined
+        CFI R2 Undefined
+        CFI R3 Undefined
+        CFI R4 Undefined
+        CFI R5 Undefined
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT Frame(CFA_SP, 3)
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon0
+        
+        
+        CFI Common cfiCommon1 Using cfiNames0
+        CFI CodeAlign 1
+        CFI DataAlign -1
+        CFI ReturnAddress ?RET CODE
+        CFI CFA_DOVERLAY Used
+        CFI CFA_IOVERLAY Used
+        CFI CFA_SP SP+-2
+        CFI CFA_PSP16 PSP16+0
+        CFI CFA_XSP16 XSP16+0
+        CFI `PSW.CY` SameValue
+        CFI `B.BR0` SameValue
+        CFI `B.BR1` SameValue
+        CFI `B.BR2` SameValue
+        CFI `B.BR3` SameValue
+        CFI `B.BR4` SameValue
+        CFI `B.BR5` SameValue
+        CFI `B.BR6` SameValue
+        CFI `B.BR7` SameValue
+        CFI `VB.BR8` SameValue
+        CFI `VB.BR9` SameValue
+        CFI `VB.BR10` SameValue
+        CFI `VB.BR11` SameValue
+        CFI `VB.BR12` SameValue
+        CFI `VB.BR13` SameValue
+        CFI `VB.BR14` SameValue
+        CFI `VB.BR15` SameValue
+        CFI VB SameValue
+        CFI B SameValue
+        CFI A SameValue
+        CFI PSW SameValue
+        CFI DPL0 SameValue
+        CFI DPH0 SameValue
+        CFI R0 SameValue
+        CFI R1 SameValue
+        CFI R2 SameValue
+        CFI R3 SameValue
+        CFI R4 SameValue
+        CFI R5 SameValue
+        CFI R6 SameValue
+        CFI R7 SameValue
+        CFI V0 SameValue
+        CFI V1 SameValue
+        CFI V2 SameValue
+        CFI V3 SameValue
+        CFI V4 SameValue
+        CFI V5 SameValue
+        CFI V6 SameValue
+        CFI V7 SameValue
+        CFI V8 SameValue
+        CFI V9 SameValue
+        CFI V10 SameValue
+        CFI V11 SameValue
+        CFI V12 SameValue
+        CFI V13 SameValue
+        CFI V14 SameValue
+        CFI V15 SameValue
+        CFI PSPH Undefined
+        CFI PSPL Undefined
+        CFI XSPH Undefined
+        CFI XSPL Undefined
+        CFI ?RET Concat
+        CFI ?BRET_EXT SameValue
+        CFI ?RET_HIGH Frame(CFA_SP, 2)
+        CFI ?RET_LOW Frame(CFA_SP, 1)
+        CFI EndCommon cfiCommon1
+        
+Ds18b20Delay        SYMBOL "Ds18b20Delay"
+??Ds18b20Delay?relay SYMBOL "?relay", Ds18b20Delay
+Ds18b20Initial      SYMBOL "Ds18b20Initial"
+??Ds18b20Initial?relay SYMBOL "?relay", Ds18b20Initial
+Ds18b20InputInitial SYMBOL "Ds18b20InputInitial"
+??Ds18b20InputInitial?relay SYMBOL "?relay", Ds18b20InputInitial
+Ds18b20OutputInitial SYMBOL "Ds18b20OutputInitial"
+??Ds18b20OutputInitial?relay SYMBOL "?relay", Ds18b20OutputInitial
+Ds18b20Read         SYMBOL "Ds18b20Read"
+??Ds18b20Read?relay SYMBOL "?relay", Ds18b20Read
+Ds18b20Write        SYMBOL "Ds18b20Write"
+??Ds18b20Write?relay SYMBOL "?relay", Ds18b20Write
+ReadDs18B20         SYMBOL "ReadDs18B20"
+??ReadDs18B20?relay SYMBOL "?relay", ReadDs18B20
+
+// E:\学习\Zigbee\Location\ZStack-CC2530-2.3.0-1.4.0\Projects\zstack\Samples\SampleApp\Source\ds18b20.c
+//    1 #include"iocc2530.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,080H
+// union <unnamed> volatile __sfr _A_P0
+_A_P0:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0fdH
+// unsigned char volatile __sfr P0DIR
+P0DIR:
+        DATA8
+        DS 1
+//    2 #include"OnBoard.h"
+//    3 #include "ds18b20.h" 
+//    4 
+//    5 #define Ds18b20IO P0_7       //温度传感器引脚
+//    6 
+//    7 
+//    8 void Ds18b20Delay(unsigned int k);
+//    9 void Ds18b20InputInitial(void);
+//   10 void Ds18b20OutputInitial(void);
+//   11 unsigned char Ds18b20Initial(void);
+//   12 void Ds18b20Write(unsigned char infor);
+//   13 unsigned char Ds18b20Read(void);
+//   14 
+//   15 
+//   16 //时钟频率为32M
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   17 void Ds18b20Delay(unsigned int k)
+Ds18b20Delay:
+        CFI Block cfiBlock0 Using cfiCommon0
+        CFI Function Ds18b20Delay
+        CODE
+//   18 {
+        ; Saved register size: 0
+        ; Auto size: 0
+        SJMP    ??Ds18b20Delay_0
+//   19   while (k--)
+//   20   {
+//   21     asm("NOP");
+??Ds18b20Delay_1:
+        NOP
+//   22     asm("NOP");
+        NOP
+//   23     asm("NOP");
+        NOP
+//   24     asm("NOP");
+        NOP
+//   25     asm("NOP");
+        NOP
+//   26     asm("NOP");
+        NOP
+//   27     asm("NOP");
+        NOP
+//   28     asm("NOP");   
+        NOP
+//   29   }
+??Ds18b20Delay_0:
+        MOV     A,R2
+        MOV     R0,A
+        MOV     A,R3
+        MOV     R1,A
+        MOV     A,R0
+        ADD     A,#-0x1
+        DEC     R2
+        MOV     A,R1
+        ADDC    A,#-0x1
+        MOV     R3,A
+        MOV     A,R0
+        ORL     A,R1
+        JNZ     ??Ds18b20Delay_1
+//   30 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock0
+//   31 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   32 void Ds18b20InputInitial(void)//设置端口为输入
+Ds18b20InputInitial:
+        CFI Block cfiBlock1 Using cfiCommon0
+        CFI Function Ds18b20InputInitial
+        CODE
+//   33 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   34     P0DIR &= 0x7f;
+        ANL     0xfd,#0x7f
+//   35 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock1
+        REQUIRE P0DIR
+//   36 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   37 void Ds18b20OutputInitial(void)//设置端口为输出
+Ds18b20OutputInitial:
+        CFI Block cfiBlock2 Using cfiCommon0
+        CFI Function Ds18b20OutputInitial
+        CODE
+//   38 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//   39     P0DIR |= 0x80;
+        ORL     0xfd,#0x80
+//   40 }
+        LJMP    ?BRET
+        CFI EndBlock cfiBlock2
+        REQUIRE P0DIR
+//   41 
+//   42 //ds18b20初始化  初始化成功返回0x00，失败返回0x01
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   43 unsigned char Ds18b20Initial(void)
+Ds18b20Initial:
+        CFI Block cfiBlock3 Using cfiCommon0
+        CFI Function Ds18b20Initial
+        CODE
+//   44 {
+        FUNCALL Ds18b20Initial, Ds18b20Delay
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Ds18b20Initial, Ds18b20Delay
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Ds18b20Initial, Ds18b20Delay
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Ds18b20Initial, Ds18b20Delay
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 10, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 10, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0xa
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        ; Saved register size: 10
+        ; Auto size: 0
+//   45     unsigned char Status = 0x00;
+        MOV     ?V0 + 0,#0x0
+//   46     unsigned int CONT_1 = 0;
+        MOV     R6,#0x0
+        MOV     R7,#0x0
+//   47     unsigned char Flag_1 = 1;
+        MOV     ?V0 + 1,#0x1
+//   48     Ds18b20OutputInitial();
+        ORL     0xfd,#0x80
+//   49     Ds18b20IO = 1;      //DQ复位
+        SETB    0x80.7
+//   50     Ds18b20Delay(260);  //稍做延时
+        ; Setup parameters for call to function Ds18b20Delay
+        MOV     R2,#0x4
+        MOV     R3,#0x1
+        LCALL   ??Ds18b20Delay?relay
+//   51     Ds18b20IO = 0;      //单片机将DQ拉低
+        CLR     0x80.7
+//   52     Ds18b20Delay(750);  //精确延时 大于 480us 小于960us
+        ; Setup parameters for call to function Ds18b20Delay
+        MOV     R2,#-0x12
+        MOV     R3,#0x2
+        LCALL   ??Subroutine3_0 & 0xFFFF
+//   53     Ds18b20IO = 1;      //拉高总线
+//   54     Ds18b20InputInitial();//设置IO输入
+??CrossCallReturnLabel_5:
+        ANL     0xfd,#0x7f
+        SJMP    ??Ds18b20Initial_0
+//   55     while((Ds18b20IO != 0)&&(Flag_1 == 1))//等待ds18b20响应，具有防止超时功能
+//   56     {                                      //等待约60ms左右
+//   57         CONT_1++;
+??Ds18b20Initial_1:
+        MOV     A,R6
+        ADD     A,#0x1
+        INC     R6
+        MOV     A,R7
+        ADDC    A,#0x0
+        MOV     R7,A
+//   58         Ds18b20Delay(10);
+        ; Setup parameters for call to function Ds18b20Delay
+        MOV     R2,#0xa
+        MOV     R3,#0x0
+        LCALL   ??Ds18b20Delay?relay
+//   59         if(CONT_1 > 8000)Flag_1 = 0;
+        CLR     C
+        MOV     A,R6
+        SUBB    A,#0x41
+        MOV     A,R7
+        SUBB    A,#0x1f
+        JC      ??Ds18b20Initial_2
+        MOV     ?V0 + 1,#0x0
+//   60         Status = Ds18b20IO;
+??Ds18b20Initial_2:
+        MOV     C,0x80.7
+        CLR     A
+        RLC     A
+        MOV     ?V0 + 0,A
+//   61     }
+??Ds18b20Initial_0:
+        MOV     C,0x80.7
+        JNC     ??Ds18b20Initial_3
+        MOV     A,?V0 + 1
+        MOV     C,0xE0 /* A   */.0
+        JC      ??Ds18b20Initial_1
+//   62     Ds18b20OutputInitial();
+??Ds18b20Initial_3:
+        ORL     0xfd,#0x80
+//   63     Ds18b20IO = 1;
+        SETB    0x80.7
+//   64     Ds18b20Delay(100);
+        ; Setup parameters for call to function Ds18b20Delay
+        MOV     R2,#0x64
+        MOV     R3,#0x0
+        LCALL   ??Ds18b20Delay?relay
+//   65     return Status;       //返回初始化状态
+        MOV     R1,?V0 + 0
+        MOV     R7,#0x2
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock3
+        REQUIRE _A_P0
+        REQUIRE P0DIR
+//   66 }
+//   67 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   68 void Ds18b20Write(unsigned char infor)
+Ds18b20Write:
+        CFI Block cfiBlock4 Using cfiCommon0
+        CFI Function Ds18b20Write
+        CODE
+//   69 {
+        FUNCALL Ds18b20Write, Ds18b20Delay
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Ds18b20Write, Ds18b20Delay
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Ds18b20Write, Ds18b20Delay
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Ds18b20Write, Ds18b20Delay
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV     A,R1
+        MOV     R7,A
+//   70     unsigned int i;
+//   71     Ds18b20OutputInitial();
+        ORL     0xfd,#0x80
+//   72     for(i=0;i<8;i++)
+        MOV     R6,#0x8
+//   73     {
+//   74         if((infor & 0x01))
+??Ds18b20Write_0:
+        MOV     A,R7
+        MOV     C,0xE0 /* A   */.0
+        CLR     0x80.7
+        JNC     ??Ds18b20Write_1
+//   75         {
+//   76             Ds18b20IO = 0;
+//   77             Ds18b20Delay(6);
+        ; Setup parameters for call to function Ds18b20Delay
+        MOV     R2,#0x6
+        LCALL   ?Subroutine1 & 0xFFFF
+//   78             Ds18b20IO = 1;
+//   79             Ds18b20Delay(50);
+??CrossCallReturnLabel_2:
+        ; Setup parameters for call to function Ds18b20Delay
+        MOV     R2,#0x32
+        SJMP    ??Ds18b20Write_2
+//   80         }
+//   81         else
+//   82         {
+//   83             Ds18b20IO = 0;
+//   84             Ds18b20Delay(50);
+??Ds18b20Write_1:
+        ; Setup parameters for call to function Ds18b20Delay
+        MOV     R2,#0x32
+        LCALL   ?Subroutine1 & 0xFFFF
+//   85             Ds18b20IO = 1;
+//   86             Ds18b20Delay(6);
+??CrossCallReturnLabel_3:
+        ; Setup parameters for call to function Ds18b20Delay
+        MOV     R2,#0x6
+??Ds18b20Write_2:
+        MOV     R3,#0x0
+        LCALL   ??Ds18b20Delay?relay
+//   87         }
+//   88         infor >>= 1;
+        MOV     A,R7
+        CLR     C
+        RRC     A
+        MOV     R7,A
+//   89     }
+        DEC     R6
+        MOV     A,R6
+        JNZ     ??Ds18b20Write_0
+//   90 }
+        SJMP    ??Subroutine4_0
+        CFI EndBlock cfiBlock4
+        REQUIRE _A_P0
+        REQUIRE P0DIR
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine1:
+        CFI Block cfiCond5 Using cfiCommon0
+        CFI NoFunction
+        CFI Conditional ??CrossCallReturnLabel_2
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        CFI Block cfiCond6 Using cfiCommon0
+        CFI (cfiCond6) NoFunction
+        CFI (cfiCond6) Conditional ??CrossCallReturnLabel_3
+        CFI (cfiCond6) R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI (cfiCond6) VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI (cfiCond6) V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI (cfiCond6) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI (cfiCond6) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI (cfiCond6) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI (cfiCond6) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI (cfiCond6) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI (cfiCond6) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI (cfiCond6) CFA_SP SP+0
+        CFI (cfiCond6) CFA_XSP16 add(XSP16, 9)
+        CFI Block cfiCond7 Using cfiCommon0
+        CFI (cfiCond7) NoFunction
+        CFI (cfiCond7) Conditional ??CrossCallReturnLabel_4
+        CFI (cfiCond7) R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI (cfiCond7) VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI (cfiCond7) V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI (cfiCond7) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI (cfiCond7) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI (cfiCond7) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI (cfiCond7) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI (cfiCond7) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI (cfiCond7) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI (cfiCond7) CFA_SP SP+0
+        CFI (cfiCond7) CFA_XSP16 add(XSP16, 9)
+        CFI Block cfiPicker8 Using cfiCommon1
+        CFI (cfiPicker8) NoFunction
+        CFI (cfiPicker8) Picker
+        MOV     R3,#0x0
+        CFI EndBlock cfiCond5
+        CFI EndBlock cfiCond6
+        CFI EndBlock cfiCond7
+        CFI EndBlock cfiPicker8
+        REQUIRE ??Subroutine3_0
+        ; // Fall through to label ??Subroutine3_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine3_0:
+        CFI Block cfiCond9 Using cfiCommon0
+        CFI NoFunction
+        CFI Conditional ??CrossCallReturnLabel_5
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 10)
+        CFI Block cfiCond10 Using cfiCommon0
+        CFI (cfiCond10) NoFunction
+        CFI (cfiCond10) Conditional ??CrossCallReturnLabel_2
+        CFI (cfiCond10) R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI (cfiCond10) VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI (cfiCond10) V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI (cfiCond10) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI (cfiCond10) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI (cfiCond10) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI (cfiCond10) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI (cfiCond10) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI (cfiCond10) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI (cfiCond10) CFA_SP SP+0
+        CFI (cfiCond10) CFA_XSP16 add(XSP16, 9)
+        CFI Block cfiCond11 Using cfiCommon0
+        CFI (cfiCond11) NoFunction
+        CFI (cfiCond11) Conditional ??CrossCallReturnLabel_3
+        CFI (cfiCond11) R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI (cfiCond11) VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI (cfiCond11) V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI (cfiCond11) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI (cfiCond11) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI (cfiCond11) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI (cfiCond11) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI (cfiCond11) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI (cfiCond11) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI (cfiCond11) CFA_SP SP+0
+        CFI (cfiCond11) CFA_XSP16 add(XSP16, 9)
+        CFI Block cfiCond12 Using cfiCommon0
+        CFI (cfiCond12) NoFunction
+        CFI (cfiCond12) Conditional ??CrossCallReturnLabel_4
+        CFI (cfiCond12) R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI (cfiCond12) VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI (cfiCond12) V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI (cfiCond12) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI (cfiCond12) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI (cfiCond12) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI (cfiCond12) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI (cfiCond12) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI (cfiCond12) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI (cfiCond12) CFA_SP SP+0
+        CFI (cfiCond12) CFA_XSP16 add(XSP16, 9)
+        CFI Block cfiPicker13 Using cfiCommon1
+        CFI (cfiPicker13) NoFunction
+        CFI (cfiPicker13) Picker
+        LCALL   ??Ds18b20Delay?relay
+        SETB    0x80.7
+        RET
+        CFI EndBlock cfiCond9
+        CFI EndBlock cfiCond10
+        CFI EndBlock cfiCond11
+        CFI EndBlock cfiCond12
+        CFI EndBlock cfiPicker13
+//   91 
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//   92 unsigned char Ds18b20Read(void)
+Ds18b20Read:
+        CFI Block cfiBlock14 Using cfiCommon0
+        CFI Function Ds18b20Read
+        CODE
+//   93 {
+        FUNCALL Ds18b20Read, Ds18b20Delay
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Ds18b20Read, Ds18b20Delay
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Ds18b20Read, Ds18b20Delay
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL Ds18b20Read, Ds18b20Delay
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+//   94     unsigned char Value = 0x00;
+        MOV     R6,#0x0
+//   95     unsigned int i;
+//   96     Ds18b20OutputInitial();
+        ORL     0xfd,#0x80
+//   97     Ds18b20IO = 1;
+        SETB    0x80.7
+//   98     Ds18b20Delay(10);
+        ; Setup parameters for call to function Ds18b20Delay
+        MOV     R2,#0xa
+        MOV     R3,#0x0
+        LCALL   ??Ds18b20Delay?relay
+//   99     for(i=0;i<8;i++)
+        MOV     R7,#0x8
+//  100     {
+//  101         Value >>= 1; 
+??Ds18b20Read_0:
+        MOV     A,R6
+        CLR     C
+        RRC     A
+        MOV     R6,A
+//  102         Ds18b20OutputInitial();
+        ORL     0xfd,#0x80
+//  103         Ds18b20IO = 0;// 给脉冲信号
+        CLR     0x80.7
+//  104         Ds18b20Delay(3);
+        ; Setup parameters for call to function Ds18b20Delay
+        MOV     R2,#0x3
+        LCALL   ?Subroutine1 & 0xFFFF
+//  105         Ds18b20IO = 1;// 给脉冲信号
+//  106         Ds18b20Delay(3);
+??CrossCallReturnLabel_4:
+        ; Setup parameters for call to function Ds18b20Delay
+        MOV     R2,#0x3
+        MOV     R3,#0x0
+        LCALL   ??Ds18b20Delay?relay
+//  107         Ds18b20InputInitial();
+        ANL     0xfd,#0x7f
+//  108         if(Ds18b20IO == 1) Value |= 0x80;
+        MOV     C,0x80.7
+        JNC     ??Ds18b20Read_1
+        MOV     A,R6
+        SETB    0xE0 /* A   */.7
+        MOV     R6,A
+//  109         Ds18b20Delay(15);
+??Ds18b20Read_1:
+        ; Setup parameters for call to function Ds18b20Delay
+        MOV     R2,#0xf
+        MOV     R3,#0x0
+        LCALL   ??Ds18b20Delay?relay
+//  110     } 
+        DEC     R7
+        MOV     A,R7
+        JNZ     ??Ds18b20Read_0
+//  111     return Value;
+        MOV     A,R6
+        CFI EndBlock cfiBlock14
+        REQUIRE ?Subroutine0
+        REQUIRE _A_P0
+        REQUIRE P0DIR
+        ; // Fall through to label ?Subroutine0
+//  112 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine0:
+        CFI Block cfiBlock15 Using cfiCommon0
+        CFI NoFunction
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        MOV     R1,A
+        CFI EndBlock cfiBlock15
+        REQUIRE ??Subroutine4_0
+        ; // Fall through to label ??Subroutine4_0
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+??Subroutine4_0:
+        CFI Block cfiBlock16 Using cfiCommon0
+        CFI NoFunction
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        MOV     R7,#0x1
+        LJMP    ?BANKED_LEAVE_XDATA
+        CFI EndBlock cfiBlock16
+//  113 
+//  114 //温度读取函数
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+//  115 unsigned char ReadDs18B20(void) 
+ReadDs18B20:
+        CFI Block cfiBlock17 Using cfiCommon0
+        CFI Function ReadDs18B20
+        CODE
+//  116 {
+        FUNCALL ReadDs18B20, Ds18b20Initial
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ReadDs18B20, Ds18b20Write
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ReadDs18B20, Ds18b20Write
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ReadDs18B20, Ds18b20Initial
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ReadDs18B20, Ds18b20Write
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ReadDs18B20, Ds18b20Write
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ReadDs18B20, Ds18b20Read
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL ReadDs18B20, Ds18b20Read
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV     A,#-0x9
+        LCALL   ?BANKED_ENTER_XDATA
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+//  117     unsigned char V1,V2;   //定义高低8位 缓冲
+//  118     unsigned char temp;    //定义温度缓冲寄存器
+//  119     
+//  120     Ds18b20Initial();
+        ; Setup parameters for call to function Ds18b20Initial
+        LCALL   ?Subroutine2 & 0xFFFF
+//  121     Ds18b20Write(0xcc);    // 跳过读序号列号的操作
+//  122     Ds18b20Write(0x44);    // 启动温度转换
+??CrossCallReturnLabel_0:
+        ; Setup parameters for call to function Ds18b20Write
+        MOV     R1,#0x44
+        LCALL   ??Ds18b20Write?relay
+//  123     
+//  124     Ds18b20Initial();
+        ; Setup parameters for call to function Ds18b20Initial
+        LCALL   ?Subroutine2 & 0xFFFF
+//  125     Ds18b20Write(0xcc);    //跳过读序号列号的操作 
+//  126     Ds18b20Write(0xbe);    //读取温度寄存器等（共可读9个寄存器） 前两个就是温度
+??CrossCallReturnLabel_1:
+        ; Setup parameters for call to function Ds18b20Write
+        MOV     R1,#-0x42
+        LCALL   ??Ds18b20Write?relay
+//  127     
+//  128     V1 = Ds18b20Read();    //低位
+        ; Setup parameters for call to function Ds18b20Read
+        LCALL   ??Ds18b20Read?relay
+        MOV     A,R1
+        MOV     R6,A
+//  129     V2 = Ds18b20Read();    //高位
+//  130     temp = ((V1 >> 4)+((V2 & 0x07)*16)); //转换数据 
+//  131 
+//  132     return temp;
+        ; Setup parameters for call to function Ds18b20Read
+        LCALL   ??Ds18b20Read?relay
+        MOV     A,R1
+        ANL     A,#0x7
+        SWAP    A
+        MOV     R0,A
+        MOV     A,R6
+        SWAP    A
+        ANL     A,#0xf
+        ADD     A,R0
+        SJMP    ?Subroutine0
+        CFI EndBlock cfiBlock17
+//  133 }
+
+        RSEG BANKED_CODE:CODE:NOROOT(0)
+?Subroutine2:
+        CFI Block cfiCond18 Using cfiCommon0
+        CFI NoFunction
+        CFI Conditional ??CrossCallReturnLabel_0
+        CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI CFA_SP SP+0
+        CFI CFA_XSP16 add(XSP16, 9)
+        CFI Block cfiCond19 Using cfiCommon0
+        CFI (cfiCond19) NoFunction
+        CFI (cfiCond19) Conditional ??CrossCallReturnLabel_1
+        CFI (cfiCond19) R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+        CFI (cfiCond19) VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+        CFI (cfiCond19) V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+        CFI (cfiCond19) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+        CFI (cfiCond19) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        CFI (cfiCond19) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+        CFI (cfiCond19) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+        CFI (cfiCond19) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+        CFI (cfiCond19) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+        CFI (cfiCond19) CFA_SP SP+0
+        CFI (cfiCond19) CFA_XSP16 add(XSP16, 9)
+        CFI Block cfiPicker20 Using cfiCommon1
+        CFI (cfiPicker20) NoFunction
+        CFI (cfiPicker20) Picker
+        LCALL   ??Ds18b20Initial?relay
+        ; Setup parameters for call to function Ds18b20Write
+        ; Setup parameters for call to function Ds18b20Write
+        MOV     R1,#-0x34
+        LCALL   ??Ds18b20Write?relay
+        RET
+        CFI EndBlock cfiCond18
+        CFI EndBlock cfiCond19
+        CFI EndBlock cfiPicker20
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Ds18b20Delay?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Ds18b20Delay
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Ds18b20InputInitial?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Ds18b20InputInitial
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Ds18b20OutputInitial?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Ds18b20OutputInitial
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Ds18b20Initial?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Ds18b20Initial
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Ds18b20Write?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Ds18b20Write
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??Ds18b20Read?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    Ds18b20Read
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??ReadDs18B20?relay:
+        LCALL   ?BDISPATCH
+        DATA
+        DC24    ReadDs18B20
+
+        END
+// 
+// 323 bytes in segment BANKED_CODE
+//  42 bytes in segment BANK_RELAYS
+//   2 bytes in segment SFR_AN
+// 
+// 365 bytes of CODE memory
+//   0 bytes of DATA memory (+ 2 bytes shared)
+//
+//Errors: none
+//Warnings: none
